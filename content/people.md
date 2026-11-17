@@ -43,8 +43,8 @@ How to edit this file (these notes do not show on the site)
 ### Ariunaa Myagmarbat
 - role: Master's Student
 - name ko: 아리오나 먁마르바트
-- interests: Statistical Genomics
-- interests ko: 유전통계학
+- interests: Statistical Genomics & Applied Statistics
+- interests ko: 유전통계학 & 응용통계
 - about: 
 - photo:
 - email:
@@ -54,8 +54,9 @@ How to edit this file (these notes do not show on the site)
 
 ### Yubin Kim
 - role: Master's Student
-- name ko:
-- interests:
+- name ko: 김유빈
+- interests: Statistical Genomics & Applied Statistics
+- interests ko: 유전통계학 & 응용통계
 - about:
 - photo:
 - email:
@@ -67,8 +68,9 @@ How to edit this file (these notes do not show on the site)
 
 ### Jae Hwan Kim
 - role: Undergraduate Researcher
-- name ko:
-- interests:
+- name ko: 김재환
+- interests: Parametric Estimation Modelling
+- interests ko: 모수적 추정방법 모델링
 - about:
 - photo:
 - email:
@@ -78,8 +80,9 @@ How to edit this file (these notes do not show on the site)
 
 ### Jeong Won An
 - role: Undergraduate Researcher
-- name ko:
-- interests:
+- name ko: 안정원
+- interests: Survival Analysis Models
+- interests ko: 생존분석 방법론
 - about:
 - photo:
 - email:
@@ -89,8 +92,9 @@ How to edit this file (these notes do not show on the site)
 
 ### Jiyoung Choi
 - role: Undergraduate Researcher
-- name ko:
-- interests:
+- name ko: 최지영
+- interests: Statistical Genomics & Applied Statistics
+- interests ko: 유전통계학 & 응용통계
 - about:
 - photo:
 - email: 
@@ -100,7 +104,7 @@ How to edit this file (these notes do not show on the site)
 
 ### Daehyun Kim
 - role: Undergraduate Researcher
-- name ko:
+- name ko: 김대현
 - interests:
 - about:
 - photo:
