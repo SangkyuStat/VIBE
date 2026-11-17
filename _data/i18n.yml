@@ -10,7 +10,7 @@ en:
     explore: "Explore our research"
     about_title: "About the lab"
     about_lead: >-
-      We are a statistics research group in the Department of Applied Statistics at Konkuk University.
+      We are a statistics and data science research group in the Department of Applied Statistics at Konkuk University.
       Quantile regression is one of our strengths, but our interests reach well beyond it: survival analysis,
       causal inference, high-dimensional and Bayesian models, and machine learning, together with real problems
       in health, aging, and the environment.
@@ -86,8 +86,8 @@ ko:
     explore: "연구 둘러보기"
     about_title: "연구실 소개"
     about_lead: >-
-      QUIRK는 건국대학교 응용통계학과의 통계 연구실입니다. 주로 분위수 회귀분석을 활용한 방법론들을 다루지만, 이 외에도 다양한 문제에 관심이 있습니다.
-      특히 생존분석, 인과추론, 고차원 및 베이지안 모형, 머신러닝 등을 연구하고, 이를 보건, 노화, 환경 분야의 실제 문제에 적용합니다.
+      QUIRK는 건국대학교 응용통계학과의 통계 및 데이터사이언스 연구실입니다. 주로 분위수 회귀분석을 활용한 방법론들을 다루지만, 이 외에도 다양한 문제들에 관심이 있습니다.
+      그중에도 특히 생존분석, 인과추론, 고차원 및 베이지안 모형, 머신러닝 등을 연구하고, 이를 보건, 노화, 환경 분야의 실제 문제에 적용합니다.
     methods_title: "방법론"
     methods_text: "분위수 회귀, 생존분석과 잔여수명, 고차원 모형과 베이지안 공간 모형을 연구하며, 이론적 근거도 함께 다룹니다."
     apps_title: "응용"
