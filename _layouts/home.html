@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{%- include lang.html %}
+<html lang="{{ lang }}">
+
+{% include head.html %}
+
+<body>
+
+	{% include header.html %}
+
+	<!-- Banner -->
+	<section id="banner" class="major">
+		<div class="inner">
+			<header class="major">
+				<div class="banner-title">
+					<h1>{% include lab-name.html %}</h1>
+					{%- if site.name_expansion %}
+					<p class="expansion">{{ site.name_expansion }}{% if site.name_motto %} <span class="motto">{{ site.name_motto }}</span>{% endif %}</p>
+					{%- endif %}
+				</div>
+			</header>
+			<div class="content">
+				<p>{% if lang == "ko" and site.tagline_ko %}{{ site.tagline_ko }}{% else %}{{ site.tagline }}{% endif %}</p>
+				<ul class="actions">
+					<li><a href="{{ base | append: '/research/' | relative_url }}" class="button next">{{ t.home.explore }}</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Main -->
+	<div id="main">
+
+		{{ content }}
+
+	</div>
+
+	{% include footer.html %}
+
+</body>
+
+</html>

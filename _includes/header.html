@@ -1,0 +1,30 @@
+{%- include lang.html -%}
+{%- comment -%} The same page in the other language: /x/ <-> /ko/x/ {%- endcomment -%}
+{%- if lang == "ko" -%}
+	{%- assign other_url = page.url | remove_first: "/ko" -%}
+	{%- if other_url == "" %}{% assign other_url = "/" %}{% endif -%}
+{%- elsif page.url == "/404.html" -%}
+	{%- assign other_url = "/ko/" -%}
+{%- else -%}
+	{%- assign other_url = "/ko" | append: page.url -%}
+{%- endif -%}
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header (always solid, same on every page) -->
+<header id="header">
+	<a href="{{ base | append: '/' | relative_url }}" class="logo" aria-label="{{ site.title }} home"><strong>{% include lab-name.html %}</strong> <span>{% if lang == "ko" and site.subtitle_ko %}{{ site.subtitle_ko }}{% else %}{{ site.subtitle }}{% endif %}</span></a>
+	<nav class="main-nav" aria-label="Main">
+		{%- for item in site.data.navigation -%}
+			{%- assign target = base | append: item.url -%}
+			{%- assign active = false -%}
+			{%- if item.url == "/" -%}
+				{%- if page.url == "/" or page.url == "/index.html" or page.url == "/ko/" -%}{%- assign active = true -%}{%- endif -%}
+			{%- elsif page.url contains item.url -%}
+				{%- assign active = true -%}
+			{%- endif %}
+		<a href="{{ target | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}>{% if lang == "ko" and item.ko %}{{ item.ko }}{% else %}{{ item.title }}{% endif %}</a>
+		{%- endfor %}
+		<a href="{{ other_url | relative_url }}" class="lang-toggle" hreflang="{% if lang == 'ko' %}en{% else %}ko{% endif %}" aria-label="{{ t.toggle_label }}"><span class="long">{{ t.toggle }}</span><span class="short">{{ t.toggle_short }}</span></a>
+	</nav>
+</header>

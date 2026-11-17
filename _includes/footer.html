@@ -1,0 +1,75 @@
+{%- include lang.html -%}
+<!-- Contact -->
+<section id="contact">
+	<div class="inner">
+		<section class="join">
+			<header class="major">
+				<h2>{{ t.footer.title }}</h2>
+			</header>
+			<p>{% if lang == "ko" and site.contact.blurb_ko %}{{ site.contact.blurb_ko }}{% else %}{{ site.contact.blurb }}{% endif %}</p>
+			<ul class="actions">
+				{%- if site.contact.email and site.contact.email != "" %}
+				<li><a href="mailto:{{ site.contact.email }}" class="button special">{{ t.footer.btn_email }}</a></li>
+				{%- endif %}
+				{%- if page.url contains "/members/" %}
+				<li><a href="{{ base | append: '/research/' | relative_url }}" class="button">{{ t.footer.btn_research }}</a></li>
+				{%- else %}
+				<li><a href="{{ base | append: '/members/' | relative_url }}" class="button">{{ t.footer.btn_team }}</a></li>
+				{%- endif %}
+			</ul>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>{{ t.footer.email }}</h3>
+					{%- if site.contact.email and site.contact.email != "" %}
+					<a href="mailto:{{ site.contact.email }}">{{ site.contact.email_display }}</a>
+					{%- else %}
+					<span>{{ site.contact.email_display }}</span>
+					{%- endif %}
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-map-marker"></span>
+					<h3>{{ t.footer.office }}</h3>
+					{%- if lang == "ko" and site.contact.office_ko %}
+					<span>{{ site.contact.office_ko }}<br />{% for line in site.contact.address_ko %}{{ line }}{% unless forloop.last %}<br />{% endunless %}{% endfor %}</span>
+					{%- else %}
+					<span>{{ site.contact.office }}<br />{% for line in site.contact.address %}{{ line }}{% unless forloop.last %}<br />{% endunless %}{% endfor %}</span>
+					{%- endif %}
+				</div>
+			</section>
+		</section>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+	<div class="inner">
+		<ul class="icons">
+			{%- for s in site.socials %}
+			<li><a href="{{ s.url }}" class="icon alt {{ s.icon }}" target="_blank" rel="noopener noreferrer" aria-label="{{ s.name }}" title="{{ s.name }}"><span class="label">{{ s.name }}</span></a></li>
+			{%- endfor %}
+		</ul>
+		<ul class="copyright">
+			<li>&copy; {{ site.time | date: "%Y" }} {{ site.title }}, {{ t.footer.dept }}</li>
+			<li>Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></li>
+			<li>Jekyll integration: <a href="https://github.com/andrewbanchich" target="_blank" rel="noopener">Andrew Banchich</a></li>
+		</ul>
+	</div>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/jquery.scrolly.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/jquery.scrollex.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/skel.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+{%- for s in page.scripts %}
+<script src="{{ s | relative_url }}"></script>
+{%- endfor %}

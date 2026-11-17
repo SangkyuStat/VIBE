@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+	Lab page layout (Members, Publications, Research). Forty base styles,
+	one compact header block, then the page sections.
+-->
+{%- include lang.html %}
+<html lang="{{ lang }}">
+
+{% include head.html %}
+
+{%- assign hero_img = page.hero_image | default: page.image -%}
+{%- assign hero_lead = page.lead | default: page.description -%}
+<body class="plain-page">
+
+	{% include header.html %}
+
+	<div id="main" class="plain">
+
+		<section class="page-hero">
+			{%- if hero_img %}
+			<span class="hero-bg" style="background-image: url('{{ hero_img | relative_url }}')" aria-hidden="true"></span>
+			{%- endif %}
+			<div class="inner">
+				{%- if page.eyebrow %}<p class="eyebrow">{% if page.eyebrow_url %}<a href="{{ page.eyebrow_url | relative_url }}">{{ page.eyebrow }}</a>{% else %}{{ page.eyebrow }}{% endif %}</p>{% endif %}
+				<h1>{{ page.title }}</h1>
+				{%- if hero_lead %}<p class="lead">{{ hero_lead }}</p>{% endif %}
+			</div>
+		</section>
+
+		{{ content }}
+
+	</div>
+
+	{% include footer.html %}
+
+</body>
+
+</html>

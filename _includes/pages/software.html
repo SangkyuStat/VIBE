@@ -1,0 +1,27 @@
+{%- include lang.html -%}
+<!-- Software (cards come from content/software.md) -->
+<section id="software" class="software-section">
+	<div class="inner">
+		<header class="group-head">
+			<h2>{{ t.software.head }}</h2>
+			<span class="count">{{ site.data.software.size }}</span>
+		</header>
+		<div class="software-grid">
+			{%- for s in site.data.software %}
+			<article class="sw-card">
+				<div class="sw-top">
+					<span class="sw-icon">R</span>
+					<span class="sw-role">{{ t.software.roles[s.role] | default: s.role }}</span>
+				</div>
+				<h3>{{ s.name }}</h3>
+				<p>{% if lang == "ko" and s.description_ko %}{{ s.description_ko }}{% else %}{{ s.description }}{% endif %}</p>
+				<ul class="sw-links">
+					{%- if s.github %}<li><a href="{{ s.github }}" target="_blank" rel="noopener"><span class="fa fa-github"></span>GitHub</a></li>{% endif %}
+					{%- if s.cran %}<li><a href="{{ s.cran }}" target="_blank" rel="noopener"><span class="fa fa-cube"></span>CRAN</a></li>{% endif %}
+					{%- if s.shiny %}<li><a href="{{ s.shiny }}" target="_blank" rel="noopener"><span class="fa fa-desktop"></span>{{ t.software.shiny }}</a></li>{% endif %}
+				</ul>
+			</article>
+			{%- endfor %}
+		</div>
+	</div>
+</section>

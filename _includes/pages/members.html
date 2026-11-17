@@ -1,0 +1,122 @@
+{%- include lang.html -%}
+{%- assign pi = site.data.members.pi -%}
+{%- if lang == "ko" -%}
+	{%- assign pi_name = pi.name_ko | default: pi.name -%}
+	{%- assign pi_title = pi.title_ko | default: t.members.roles[pi.title] | default: pi.title -%}
+	{%- assign pi_role = pi.role_ko | default: pi.role -%}
+	{%- assign pi_exp = pi.experience_ko | default: pi.experience -%}
+	{%- assign pi_deg = pi.degree_ko | default: pi.degree -%}
+{%- else -%}
+	{%- assign pi_name = pi.name -%}{%- assign pi_title = pi.title -%}{%- assign pi_role = pi.role -%}
+	{%- assign pi_exp = pi.experience -%}{%- assign pi_deg = pi.degree -%}
+{%- endif -%}
+
+<!-- PI -->
+<section class="pi-section">
+	<div class="inner">
+		<article class="pi-card">
+			<div class="pi-photo">
+				{%- if pi.photo %}
+				<img src="{{ pi.photo | prepend: '/assets/images/members/' | relative_url }}" alt="{{ pi_name }}" />
+				{%- endif %}
+			</div>
+			<div class="pi-body">
+				<p class="eyebrow">{{ pi_title }}</p>
+				<h2>{{ pi_name }}</h2>
+				{%- if pi_role %}<p class="pi-role">{{ pi_role }}</p>{% endif %}
+				<dl class="pi-facts">
+					{%- if pi_exp %}<dt>{{ t.members.experience }}</dt><dd>{{ pi_exp | join: "<br />" }}</dd>{% endif %}
+					{%- if pi_deg %}<dt>{{ t.members.degree }}</dt><dd>{{ pi_deg | join: "<br />" }}</dd>{% endif %}
+				</dl>
+				<ul class="link-row">
+					{%- if pi.links.email %}{% if pi.links.email contains "@" %}<li><a href="mailto:{{ pi.links.email }}"><span class="fa fa-envelope"></span>{{ pi.links.email }}</a></li>{% else %}<li class="chip"><span class="fa fa-envelope"></span>{{ pi.links.email }}</li>{% endif %}{% endif %}
+					{%- if pi.links.homepage %}<li><a href="{{ pi.links.homepage }}" target="_blank" rel="noopener"><span class="fa fa-home"></span>Homepage</a></li>{% endif %}
+					{%- if pi.links.scholar %}<li><a href="{{ pi.links.scholar }}" target="_blank" rel="noopener"><span class="fa fa-graduation-cap"></span>Scholar</a></li>{% endif %}
+					{%- if pi.links.github %}<li><a href="{{ pi.links.github }}" target="_blank" rel="noopener"><span class="fa fa-github"></span>GitHub</a></li>{% endif %}
+					{%- if pi.links.linkedin %}<li><a href="{{ pi.links.linkedin }}" target="_blank" rel="noopener"><span class="fa fa-linkedin"></span>LinkedIn</a></li>{% endif %}
+				</ul>
+			</div>
+		</article>
+	</div>
+</section>
+
+<!-- Groups -->
+{%- for g in site.data.members.groups %}
+{%- if g.members.size > 0 %}
+<section class="member-group">
+	<div class="inner">
+		<header class="group-head">
+			<h2>{{ t.members.groups[g.name] | default: g.name }}</h2>
+			<span class="count">{{ g.members.size }}</span>
+		</header>
+		<div class="member-grid">
+			{%- for m in g.members %}
+			{%- assign parts = m.name | split: " " %}
+			{%- if lang == "ko" %}
+				{%- assign m_name = m.name_ko | default: m.name %}
+				{%- assign m_role = m.role_ko | default: t.members.roles[m.role] | default: m.role %}
+				{%- assign m_int = m.interests_ko | default: m.interests %}
+				{%- assign m_about = m.about_ko | default: m.about %}
+				{%- assign m_now = m.now_ko | default: m.now %}
+			{%- else %}
+				{%- assign m_name = m.name %}{% assign m_role = m.role %}{% assign m_int = m.interests %}{% assign m_about = m.about %}{% assign m_now = m.now %}
+			{%- endif %}
+			<article class="member-card av-{{ forloop.index | modulo: 6 | plus: 1 }}">
+				<div class="member-body">
+					<div class="member-head">
+						<div class="avatar">
+							{%- if m.photo %}
+							<img src="{{ m.photo | prepend: '/assets/images/members/' | relative_url }}" alt="{{ m_name }}" />
+							{%- else %}
+							<span>{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</span>
+							{%- endif %}
+						</div>
+						<div>
+							<h3>{{ m_name }}</h3>
+							<p class="role">{{ m_role }}{% if m.years %} · {{ m.years }}{% endif %}</p>
+							{%- if m_now %}<p class="now">{{ t.members.now }}: {{ m_now }}</p>{% endif %}
+						</div>
+					</div>
+					{%- if m_int %}
+					<div class="member-interests">
+						<span class="label">{{ t.members.interests }}</span>
+						<p>{{ m_int | join: ", " }}</p>
+					</div>
+					{%- endif %}
+					{%- if m_about %}<p class="member-about">{{ m_about }}</p>{% endif %}
+				</div>
+				{%- assign l = m.links -%}
+				{%- capture any_link %}{{ l.email }}{{ l.homepage }}{{ l.scholar }}{{ l.github }}{{ l.linkedin }}{% endcapture %}
+				{%- if any_link != "" %}
+				<ul class="link-row member-links">
+					{%- if l.email %}<li><a href="mailto:{{ l.email }}"><span class="fa fa-envelope"></span>Email</a></li>{% endif %}
+					{%- if l.homepage %}<li><a href="{{ l.homepage }}" target="_blank" rel="noopener"><span class="fa fa-home"></span>Homepage</a></li>{% endif %}
+					{%- if l.scholar %}<li><a href="{{ l.scholar }}" target="_blank" rel="noopener"><span class="fa fa-graduation-cap"></span>Scholar</a></li>{% endif %}
+					{%- if l.github %}<li><a href="{{ l.github }}" target="_blank" rel="noopener"><span class="fa fa-github"></span>GitHub</a></li>{% endif %}
+					{%- if l.linkedin %}<li><a href="{{ l.linkedin }}" target="_blank" rel="noopener"><span class="fa fa-linkedin"></span>LinkedIn</a></li>{% endif %}
+				</ul>
+				{%- endif %}
+			</article>
+			{%- endfor %}
+		</div>
+	</div>
+</section>
+{%- endif %}
+{%- endfor %}
+
+<!-- Join -->
+<section class="join-section">
+	<div class="inner">
+		<div class="callout">
+			<div>
+				<p class="eyebrow">{{ t.members.join_eyebrow }}</p>
+				<h2>{{ t.members.join_title }}</h2>
+				<p>{% if lang == "ko" and site.contact.join_text_ko %}{{ site.contact.join_text_ko }}{% else %}{{ site.contact.join_text }}{% endif %}</p>
+			</div>
+			<div class="callout-contact">
+				<span class="fa fa-envelope"></span>
+				<span>{{ site.contact.email_display }}</span>
+			</div>
+		</div>
+	</div>
+</section>

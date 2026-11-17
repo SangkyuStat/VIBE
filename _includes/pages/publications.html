@@ -1,0 +1,47 @@
+{%- include lang.html -%}
+{%- assign pubs = site.data.publications -%}
+{%- assign n_methods = pubs | where: "type", "methods" | size -%}
+{%- assign n_app = pubs | where: "type", "applications" | size -%}
+{%- assign n_pre = pubs | where: "type", "preprint" | size -%}
+
+<!-- List -->
+<section class="pub-section">
+	<div class="inner">
+		<div class="pub-toolbar">
+			<div class="pub-filters" role="group" aria-label="{{ t.pubs.filter_label }}">
+				<button type="button" class="pill is-active" data-filter="all">{{ t.pubs.all }} <span>{{ pubs.size }}</span></button>
+				<button type="button" class="pill" data-filter="methods">{{ t.pubs.methods }} <span>{{ n_methods }}</span></button>
+				<button type="button" class="pill" data-filter="applications">{{ t.pubs.applications }} <span>{{ n_app }}</span></button>
+				<button type="button" class="pill" data-filter="preprint">{{ t.pubs.preprints }} <span>{{ n_pre }}</span></button>
+			</div>
+			<label class="pub-search">
+				<span class="fa fa-search" aria-hidden="true"></span>
+				<input type="search" id="pub-search" placeholder="{{ t.pubs.search }}" aria-label="{{ t.pubs.search_label }}" />
+			</label>
+		</div>
+		<p class="pub-legend"><span class="lab">{{ t.pubs.lab_member }}</span> &nbsp;·&nbsp; * {{ t.pubs.equal }} &nbsp;·&nbsp; &#9993; {{ t.pubs.corresponding }} &nbsp;·&nbsp; <a href="{{ site.socials[0].url }}" target="_blank" rel="noopener">Google Scholar <span class="fa fa-external-link"></span></a></p>
+
+		{%- assign years = pubs | group_by: "year" | sort: "name" | reverse %}
+		{%- for y in years %}
+		<div class="pub-year">
+			<div class="year-label"><span>{{ y.name }}</span></div>
+			<ol class="pub-list">
+				{%- for p in y.items %}
+				<li class="pub" data-type="{{ p.type }}">
+					<h3 class="pub-title">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+					<p class="pub-authors">{{ p.authors }}</p>
+					<p class="pub-meta">
+						<span class="badge badge-{{ p.type }}">{% case p.type %}{% when "methods" %}{{ t.pubs.badge_methods }}{% when "applications" %}{{ t.pubs.badge_applications }}{% when "preprint" %}{{ t.pubs.badge_preprint }}{% endcase %}</span>
+						{%- if p.venue and p.venue != "" %}<em class="pub-venue">{{ p.venue }}</em>{% endif %}
+						{%- if p.status %}<span class="pub-status">{{ p.status }}</span>{% endif %}
+						{%- if p.url %}<a class="pub-link" href="{{ p.url }}" target="_blank" rel="noopener">{% if p.url contains "arxiv" %}arXiv{% else %}{{ t.pubs.paper }}{% endif %} <span class="fa fa-long-arrow-right"></span></a>{% endif %}
+					</p>
+					{%- if p.note %}<p class="pub-note"><span class="fa fa-trophy"></span>{{ p.note }}</p>{% endif %}
+				</li>
+				{%- endfor %}
+			</ol>
+		</div>
+		{%- endfor %}
+		<p class="pub-empty" hidden>{{ t.pubs.empty }}</p>
+	</div>
+</section>

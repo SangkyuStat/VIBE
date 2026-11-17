@@ -1,0 +1,9 @@
+{%- comment -%} Lab name with a math hat. Set name_hat in _config.yml (q | all | none).
+The hat is a stroked SVG line with non-scaling stroke, so its thickness stays even. {%- endcomment -%}
+{%- if site.name_hat == "all" -%}
+<span class="labname hat-all"><span class="hat">{{ site.title }}<svg class="hat-mark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M2,28 Q31,13 50,3 Q69,13 98,28"/></svg></span></span>
+{%- elsif site.name_hat == "q" -%}
+<span class="labname hat-first"><span class="hat">{{ site.title | slice: 0 }}<svg class="hat-mark" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M4,27 L50,3 L96,27"/></svg></span>{{ site.title | slice: 1, 99 }}</span>
+{%- else -%}
+<span class="labname">{{ site.title }}</span>
+{%- endif -%}

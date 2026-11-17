@@ -1,0 +1,51 @@
+{%- include lang.html -%}
+<!-- About -->
+<section id="two" class="about">
+	<div class="inner">
+		<header class="major">
+			<h2>{{ t.home.about_title }}</h2>
+		</header>
+		<p class="lead">{{ t.home.about_lead }}</p>
+		<div class="about-grid">
+			<div>
+				<span class="about-num">01</span>
+				<h3>{{ t.home.methods_title }}</h3>
+				<p>{{ t.home.methods_text }}</p>
+			</div>
+			<div>
+				<span class="about-num">02</span>
+				<h3>{{ t.home.apps_title }}</h3>
+				<p>{{ t.home.apps_text }}</p>
+			</div>
+			<div>
+				<span class="about-num">03</span>
+				<h3>{{ t.home.software_title }}</h3>
+				<p>{{ t.home.software_text }}</p>
+			</div>
+		</div>
+		<ul class="actions">
+			<li><a href="{{ base | append: '/members/' | relative_url }}" class="button">{{ t.home.btn_team }}</a></li>
+			<li><a href="{{ base | append: '/publications/' | relative_url }}" class="button special">{{ t.home.btn_pubs }}</a></li>
+			<li><a href="{{ base | append: '/software/' | relative_url }}" class="button">{{ t.home.btn_software }}</a></li>
+		</ul>
+	</div>
+</section>
+
+<!-- News -->
+<section id="three" class="news">
+	<div class="inner">
+		<header class="major">
+			<h2>{{ t.home.news_title }}</h2>
+		</header>
+		<ul class="news-list">
+			{%- for n in site.data.news limit: 6 %}
+			{%- assign d = n.date | append: "-01" %}
+			{%- if lang == "ko" and n.text_ko %}{% assign text = n.text_ko %}{% else %}{% assign text = n.text %}{% endif %}
+			<li>
+				<time datetime="{{ n.date }}">{% if lang == "ko" %}<span class="news-month">{{ d | date: "%-m" }}월</span>{% else %}<span class="news-month">{{ d | date: "%b" }}</span>{% endif %}<span class="news-year">{{ d | date: "%Y" }}</span></time>
+				<p>{{ text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>
+			</li>
+			{%- endfor %}
+		</ul>
+	</div>
+</section>

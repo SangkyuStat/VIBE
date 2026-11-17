@@ -1,0 +1,37 @@
+---
+layout: plain
+---
+{%- include lang.html -%}
+{%- comment -%}
+	One research area: a short overview, then the related papers.
+{%- endcomment -%}
+
+<!-- Overview -->
+<section class="r-overview">
+	<div class="inner">
+		{{ content }}
+	</div>
+</section>
+
+<!-- Related papers (from content/papers.bib, matched by "areas") -->
+{%- assign key = page.slug -%}
+{%- assign related = site.data.publications | where_exp: "p", "p.areas contains key" %}
+<section class="r-related">
+	<div class="inner">
+		{%- if related.size > 0 %}
+		<header class="group-head">
+			<h2>{{ t.research.related }}</h2>
+			<span class="count">{{ related.size }}</span>
+		</header>
+		<ol class="pub-mini">
+			{%- for p in related %}
+			{% include pub-mini.html pub=p %}
+			{%- endfor %}
+		</ol>
+		{%- endif %}
+		<ul class="actions">
+			<li><a href="{{ base | append: '/research/' | relative_url }}" class="button small">{{ t.research.all_areas }}</a></li>
+			<li><a href="{{ base | append: '/publications/' | relative_url }}" class="button special small">{{ t.research.all_pubs }}</a></li>
+		</ul>
+	</div>
+</section>

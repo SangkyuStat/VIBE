@@ -1,0 +1,9 @@
+{%- include lang.html -%}
+{%- assign p = include.pub -%}
+<li>
+	<span class="pub-mini-year">{{ p.year }}</span>
+	<div>
+		{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener" class="pub-mini-title">{{ p.title }}</a>{% else %}<span class="pub-mini-title">{{ p.title }}</span>{% endif %}
+		<span class="pub-mini-venue">{% if p.venue and p.venue != "" %}{{ p.venue }}{% if p.type == "preprint" %} {{ t.pubs.preprint_note }}{% endif %}{% elsif p.status %}{{ p.status }}{% endif %}</span>
+	</div>
+</li>

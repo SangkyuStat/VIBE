@@ -1,0 +1,4 @@
+{%- comment -%} Sets lang (en | ko), t (text for that language, from _data/i18n.yml) and base ("" or "/ko") for links. {%- endcomment -%}
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- if lang == "ko" -%}{%- assign base = "/ko" -%}{%- else -%}{%- assign base = "" -%}{%- endif -%}

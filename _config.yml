@@ -1,0 +1,109 @@
+# ------------------------------------------------------------
+#  Lab site settings
+#  After editing this file, restart `jekyll serve` to see changes.
+# ------------------------------------------------------------
+
+title: "QUIRK"                          # lab name (plain text: browser tab, footer, search engines)
+name_hat: q                             # hat in the logo and home banner:
+                                        #   q    = hat on Q only   (\hat{Q}UIRK)
+                                        #   all  = long hat        (\widehat{QUIRK})
+                                        #   none = no hat
+name_expansion: "<strong>Qu</strong>antile <strong>I</strong>nference <strong>R</strong>esearch at <strong>K</strong>onkuk"   # line under the name on the home page
+name_motto: "Journey beyond the mean"   # shown after name_expansion; delete the line to hide it
+subtitle: "Konkuk University"           # small text next to the logo
+subtitle_ko: "건국대학교"
+tagline: "Applied statistics for health, biology, and the environment"   # line under the home banner title
+tagline_ko: "보건, 생명과학, 환경 문제를 위한 응용통계"
+description: >-
+  A statistics research group in the Department of Applied Statistics,
+  Konkuk University. Applied statistics for health, biology, and the
+  environment, built on quantile regression.
+
+# If the repo is named <username>.github.io, keep baseurl empty.
+# If it is a project repo (e.g. github.com/<user>/lab), use baseurl: "/lab".
+# The GitHub Actions workflow sets this for you automatically on deploy.
+url: ""
+baseurl: ""
+
+# Contact block (bottom of every page)
+contact:
+  email_display: "sangkyulee (at) konkuk.ac.kr"
+  email: ""            # optional: real address for a mailto link; leave empty to hide the link
+  office: "Office 704, Sanghuh Research Building"
+  office_ko: "상허연구관 704호"
+  address:
+    - "120 Neungdong-ro, Gwangjin-gu"
+    - "Seoul 05029, South Korea"
+  address_ko:
+    - "서울특별시 광진구 능동로 120"
+    - "(우) 05029"
+  blurb: >-
+    Questions about our work, a collaboration, or joining the lab?
+    We would like to hear from you.
+  join_text: >-
+    We welcome students at any level, undergraduate or graduate, who enjoy both
+    theory and real data. If you are interested, send an email with your CV,
+    your transcript, and a short note about what you want to work on. Please
+    point out the statistics and math courses you have taken, such as
+    probability, mathematical statistics, linear algebra, and calculus.
+  blurb_ko: >-
+    연구 내용, 공동연구, 연구실 합류에 대해 궁금한 점이 있으면 편하게 연락 주세요.
+  join_text_ko: >-
+    통계 이론과 실제 데이터를 모두 좋아하는 학생이라면 학부생, 대학원생 누구나 환영합니다. 관심이 있다면 CV,
+    성적증명서, 하고 싶은 연구에 대한 짧은 소개를 이메일로 보내 주세요. 확률론, 수리통계, 선형대수, 미적분처럼
+    지금까지 들은 통계·수학 과목도 함께 적어 주시면 좋습니다.
+
+# Footer icons (Font Awesome 4 names)
+socials:
+  - name: Google Scholar
+    icon: fa-graduation-cap
+    url: https://scholar.google.com/citations?user=E4S3q1gAAAAJ&hl=en
+  - name: GitHub
+    icon: fa-github
+    url: https://github.com/SangkyuStat
+  - name: Department
+    icon: fa-university
+    url: https://www.konkuk.ac.kr/en/14602/subview.do
+
+# Research areas live in _research/ (one file per area)
+collections:
+  research:
+    output: true
+    permalink: /research/:name/
+  research_ko:                # Korean versions of the research pages (same file names)
+    output: true
+    permalink: /ko/research/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: research
+      eyebrow: Research
+      eyebrow_url: /research/
+  - scope:
+      path: ""
+      type: research_ko
+    values:
+      layout: research
+      lang: ko
+      eyebrow: 연구
+      eyebrow_url: /ko/research/
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+  quiet_deps: true
+  silence_deprecations: [import, global-builtin, slash-div, color-functions]
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - vendor
+  - .bundle

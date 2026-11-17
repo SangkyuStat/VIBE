@@ -1,0 +1,222 @@
+///
+/// Forty by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+/// Lab edit: the slide-in "Menu" panel is replaced by an always-visible top nav.
+///
+
+/* Header */
+
+	@include keyframes('reveal-header') {
+		0% { top: -4em; opacity: 0; }
+		100% { top: 0; opacity: 1; }
+	}
+
+	#header {
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+		background-color: transparentize(_palette(bg-alt), 0.04);
+		box-shadow: 0 1px 0 0 _palette(border);
+		cursor: default;
+		font-weight: _font(weight-bold);
+		height: 3.25em;
+		left: 0;
+		letter-spacing: _font(letter-spacing-alt);
+		line-height: 3.25em;
+		margin: 0;
+		position: fixed;
+		text-transform: uppercase;
+		top: 0;
+		width: 100%;
+		z-index: _misc(z-index-base);
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+
+		.logo {
+			border: 0;
+			display: inline-block;
+			font-size: 0.8em;
+			height: inherit;
+			line-height: inherit;
+			padding: 0 1.5em;
+			white-space: nowrap;
+
+			strong {
+				@include vendor('transition', (
+					'background-color #{_duration(transition)} ease-in-out',
+					'color #{_duration(transition)} ease-in-out'
+				));
+				background-color: _palette(fg-bold);
+				color: _palette(bg);
+				display: inline-block;
+				line-height: 1.65em;
+				margin-right: 0.325em;
+				padding: 0 0.125em 0 (_font(letter-spacing-alt) + 0.125em);
+			}
+
+			> span {
+				color: _palette(fg-light);
+			}
+
+			&:hover {
+				strong {
+					background-color: _palette(highlight);
+				}
+			}
+		}
+
+		.main-nav {
+			@include vendor('display', 'flex');
+			@include vendor('justify-content', 'flex-end');
+			@include vendor('flex-grow', '1');
+			height: inherit;
+			line-height: inherit;
+			padding-right: 1em;
+
+			a {
+				border: 0;
+				color: _palette(fg);
+				display: block;
+				font-size: 0.75em;
+				height: inherit;
+				line-height: inherit;
+				opacity: 0.72;
+				padding: 0 1.1em;
+				position: relative;
+				@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out, color #{_duration(transition)} ease-in-out');
+
+				&:after {
+					@include vendor('transition', 'transform 0.25s ease, opacity 0.25s ease');
+					@include vendor('transform', 'scaleX(0)');
+					background: _palette(highlight);
+					bottom: 0.95em;
+					content: '';
+					height: 2px;
+					left: 1.1em;
+					opacity: 0;
+					position: absolute;
+					right: 1.35em;
+				}
+
+				&:hover {
+					color: _palette(fg-bold) !important;
+					opacity: 1;
+
+					&:after {
+						@include vendor('transform', 'scaleX(1)');
+						opacity: 0.6;
+					}
+				}
+
+				&.active {
+					color: _palette(highlight) !important;
+					opacity: 1;
+
+					&:after {
+						@include vendor('transform', 'scaleX(1)');
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		&.reveal {
+			@include vendor('animation', 'reveal-header 0.35s ease');
+		}
+
+		&.alt {
+			@include vendor('transition', 'opacity #{_duration(banner)} ease');
+			@include vendor('transition-delay', '0.75s');
+			@include vendor('animation', 'none');
+			background-color: transparent;
+			box-shadow: none;
+			position: absolute;
+			-webkit-backdrop-filter: none;
+			backdrop-filter: none;
+
+			.main-nav a {
+				opacity: 0.85;
+
+				&.active {
+					color: _palette(fg-bold) !important;
+
+					&:after { background: _palette(fg-bold); }
+				}
+			}
+
+			&.style1 { .logo { strong { color: _palette(accent1); } } }
+			&.style2 { .logo { strong { color: _palette(accent2); } } }
+			&.style3 { .logo { strong { color: _palette(accent3); } } }
+			&.style4 { .logo { strong { color: _palette(accent4); } } }
+			&.style5 { .logo { strong { color: _palette(accent5); } } }
+			&.style6 { .logo { strong { color: _palette(accent6); } } }
+		}
+
+		body.is-loading & {
+			&.alt {
+				opacity: 0;
+			}
+		}
+
+		@include breakpoint(medium) {
+			.logo > span { display: none; }
+
+			.main-nav a {
+				padding: 0 0.8em;
+
+				&:after { left: 0.8em; right: 1.05em; }
+			}
+		}
+
+		@include breakpoint(small) {
+			height: 2.75em;
+			line-height: 2.75em;
+
+			.logo {
+				padding: 0 1em;
+
+				> span { display: none; }
+			}
+
+			.main-nav {
+				padding-right: 0.5em;
+
+				a {
+					font-size: 0.7em;
+					letter-spacing: 0.18em;
+					padding: 0 0.65em;
+
+					&:after { bottom: 0.75em; left: 0.65em; right: 0.83em; }
+				}
+			}
+		}
+
+		// Phones: drop the logo (Home is in the nav) so all four links fit on one line.
+		@include breakpoint(xsmall) {
+			.logo { display: none; }
+
+			.main-nav {
+				@include vendor('justify-content', 'center');
+				padding-right: 0;
+
+				a {
+					font-size: 0.66em;
+					letter-spacing: 0.12em;
+					padding: 0 0.7em;
+
+					&:after { left: 0.7em; right: 0.82em; }
+				}
+			}
+		}
+
+		@include breakpoint(xxsmall) {
+			.main-nav a {
+				font-size: 0.62em;
+				letter-spacing: 0.08em;
+				padding: 0 0.5em;
+
+				&:after { left: 0.5em; right: 0.58em; }
+			}
+		}
+	}

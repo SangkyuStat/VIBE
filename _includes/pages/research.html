@@ -1,0 +1,38 @@
+{%- include lang.html -%}
+<!-- Intro -->
+<section class="r-overview">
+	<div class="inner">
+		<p>{{ t.research.intro }}</p>
+	</div>
+</section>
+
+<!-- Areas (same layout as Forty's landing spotlights) -->
+<section class="spotlights">
+	{%- if lang == "ko" %}{% assign areas = site.research_ko | sort: "order" %}{% else %}{% assign areas = site.research | sort: "order" %}{% endif %}
+	{%- for a in areas %}
+	<section>
+		<a href="{{ a.url | relative_url }}" class="image">
+			<img src="{{ a.image | relative_url }}" alt="" />
+		</a>
+		<div class="content">
+			<div class="inner">
+				<h3><a href="{{ a.url | relative_url }}">{{ a.title }}</a></h3>
+				<p>{{ a.summary }}</p>
+				<ul class="actions">
+					<li><a href="{{ a.url | relative_url }}" class="button small">{{ t.research.learn_more }}</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	{%- endfor %}
+</section>
+
+<!-- Software -->
+<section class="r-related">
+	<div class="inner">
+		<p>{{ t.research.software_text }}</p>
+		<ul class="actions">
+			<li><a href="{{ base | append: '/software/' | relative_url }}" class="button small next">{{ t.research.software_btn }}</a></li>
+		</ul>
+	</div>
+</section>

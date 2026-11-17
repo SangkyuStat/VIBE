@@ -1,0 +1,16 @@
+# Top menu. Order here = order in the header. "ko" is the label on the Korean pages.
+- title: Home
+  ko: 홈
+  url: /
+- title: Members
+  ko: 구성원
+  url: /members/
+- title: Research
+  ko: 연구
+  url: /research/
+- title: Publications
+  ko: 논문
+  url: /publications/
+- title: Software
+  ko: 소프트웨어
+  url: /software/
