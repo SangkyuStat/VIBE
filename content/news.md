@@ -9,7 +9,8 @@ Korean page: put the Korean text on the next line, indented:
     - ko: 논문 *...*의 **Biometrics** 게재가 승인되었습니다.
 Without a "- ko:" line, the Korean page shows the English text.
 -->
-
+- 2026-09: Our lab member Jeong Won An is awarded *Research for Undergraduate Student (RUS) scholarship* from Konkuk University.
+    - ko: 안정원 학생이 건국대학교에서 주관하는 RUS 프로그램에 선정되었습니다.
 - 2026-07: Our paper *Causal Decomposition Framework for Quantifying Intervenable Cancer Health Disparities* is accepted in **Biometrics**.
     - ko: 논문 *Causal Decomposition Framework for Quantifying Intervenable Cancer Health Disparities*의 **Biometrics** 게재가 승인되었습니다.
 - 2026-04: Our paper *High-dimensional Partial Linear Model with Trend Filtering* is accepted in **Electronic Journal of Statistics**.
