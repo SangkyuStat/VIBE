@@ -69,8 +69,8 @@ How to edit this file (these notes do not show on the site)
 ### Jae Hwan Kim
 - role: Undergraduate Researcher
 - name ko: 김재환
-- interests: Parametric Estimation Modelling
-- interests ko: 모수적 추정방법 모델링
+- interests: Statistical Modelling
+- interests ko: 통계적 모델링
 - about:
 - photo:
 - email:
@@ -81,8 +81,8 @@ How to edit this file (these notes do not show on the site)
 ### Jeong Won An
 - role: Undergraduate Researcher
 - name ko: 안정원
-- interests: Survival Analysis Models
-- interests ko: 생존분석 방법론
+- interests: Statistical Modelling
+- interests ko: 통계적 모델링
 - about:
 - photo:
 - email:
