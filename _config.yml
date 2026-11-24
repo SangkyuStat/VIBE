@@ -3,21 +3,20 @@
 #  After editing this file, restart `jekyll serve` to see changes.
 # ------------------------------------------------------------
 
-title: "QUIRK"                          # lab name (plain text: browser tab, footer, search engines)
+title: "VIBE"                           # lab name (plain text: browser tab, footer, search engines)
 name_hat: q                             # hat in the logo and home banner:
-                                        #   q    = hat on Q only   (\hat{Q}UIRK)
-                                        #   all  = long hat        (\widehat{QUIRK})
+                                        #   q    = hat on the first letter (\hat{V}IBE)
+                                        #   all  = long hat        (\widehat{VIBE})
                                         #   none = no hat
-name_expansion: "<strong>Qu</strong>antile <strong>I</strong>nference <strong>R</strong>esearch at <strong>K</strong>onkuk"   # line under the name on the home page
-name_motto: "Journey beyond the mean"   # shown after name_expansion; delete the line to hide it
+name_expansion: "<strong>V</strong>ariation in <strong>I</strong>ndividuals, <strong>B</strong>eyond <strong>E</strong>xpectation"   # line under the name on the home page
 subtitle: "Konkuk University"           # small text next to the logo
 subtitle_ko: "건국대학교"
 tagline: "Applied statistics for health, biology, and the environment"   # line under the home banner title
 tagline_ko: "보건, 생명과학, 환경 문제를 위한 응용통계"
 description: >-
-  A statistics research group in the Department of Applied Statistics,
-  Konkuk University. Applied statistics for health, biology, and the
-  environment, built on quantile regression.
+  A statistics and data science research group in the Department of
+  Applied Statistics, Konkuk University. We study how people vary beyond
+  the average, with applications in health, biology, and the environment.
 
 # If the repo is named <username>.github.io, keep baseurl empty.
 # If it is a project repo (e.g. github.com/<user>/lab), use baseurl: "/lab".

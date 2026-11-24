@@ -9,7 +9,12 @@
 //  --hat-inset trims the hat at both ends, --hat-shift pulls it left to undo
 //  letter-spacing after the last glyph.
 
+	// The lab name uses Montserrat, the same font as the printed logo
+	// (vibe-logo/), so the site and the logo match.
 	.labname {
+		font-family: 'Montserrat', 'Source Sans Pro', Helvetica, sans-serif;
+		font-weight: 700;
+
 		.hat {
 			--hat-inset: 0.1em;
 			--hat-shift: 0em;
@@ -61,8 +66,9 @@
 
 	// Home banner title.
 	#banner h1 .labname {
-		.hat { --hat-inset: 0.14em; }
-		.hat-mark { top: 0.02em; height: 0.19em; }
+		letter-spacing: 0.14em;
+		.hat { --hat-inset: 0.13em; --hat-shift: 0.14em; }
+		.hat-mark { top: 0.047em; height: 0.16em; }
 		.hat-mark path { stroke-width: 0.06em; }
 
 		&.hat-all {
@@ -144,9 +150,10 @@
 
 		.expansion {
 			color: transparentize(_palette(fg), 0.35);
-			font-size: 1.05em;
-			font-weight: 300;
-			letter-spacing: 0.04em;
+			font-family: 'Montserrat', 'Source Sans Pro', Helvetica, sans-serif;
+			font-size: 0.95em;
+			font-weight: 400;
+			letter-spacing: 0.03em;
 			margin: 0.1em 0 0 0;
 			text-transform: none;
 

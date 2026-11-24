@@ -1,14 +1,14 @@
 ---
-title: Survival & Residual Life
-order: 2
+title: Survival Analysis
+order: 1
 image: /assets/images/research/survival.jpg
-description: "Quantiles for time-to-event data: how much time is left."
+description: "Methods for time-to-event data."
 summary: >-
-  Quantiles fit time-to-event data well. We study quantile residual life,
-  which asks how much time is left for someone who has been event-free so far,
-  along with competing risks and patients who may never have the event.
+  Time-to-event data come with censoring, competing events, and long
+  follow-up. We develop regression methods for these data and apply them in
+  clinical and public health studies.
 ---
 
-Survival data come with censoring, competing events, and patients who may never have the event at all. We build models that handle these features directly and give answers that clinicians can read.
+Many questions in health are about time: time to diagnosis, to relapse, or to death. Such data are rarely complete. Some people leave a study early, some face competing events, and some never have the event at all.
 
-A central theme is the quantile residual lifetime: the median (or any quantile) of the remaining time, given survival up to a certain point. It is easy to explain, it updates as follow-up goes on, and it fits naturally into a regression framework.
+We develop models and inference tools that handle these features directly and give results that are easy to interpret.

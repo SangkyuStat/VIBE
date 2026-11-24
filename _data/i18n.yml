@@ -11,15 +11,15 @@ en:
     about_title: "About the lab"
     about_lead: >-
       We are a statistics and data science research group in the Department of Applied Statistics at Konkuk University.
-      Quantile regression is one of our strengths, but our interests reach well beyond it: survival analysis,
-      causal inference, high-dimensional and Bayesian models, and machine learning, together with real problems
-      in health, aging, and the environment.
+      We look beyond averages to the variation in data, working on survival analysis, causal inference, high-dimensional
+      statistics, quantile regression, Bayesian models, and machine learning, with applications in health, aging, and
+      the environment.
     methods_title: "Methods"
-    methods_text: "Quantile regression, survival and residual life, high-dimensional and Bayesian spatial models, with theory to back them up."
+    methods_text: "Survival analysis, high-dimensional statistics, quantile regression, Bayesian models, and machine learning, with theory to back them up."
     apps_title: "Applications"
-    apps_text: "Cancer epidemiology, aging and Alzheimer's disease, nutrition and metabolomics, and climate extremes, often with collaborators at NIH."
+    apps_text: "Cancer epidemiology, aging and Alzheimer's disease, nutrition and metabolomics, and climate extremes, tackled with a range of methods."
     software_title: "Software"
-    software_text: "Our methods ship as R packages, so that others can use them on their own data."
+    software_text: "Our methods ship as software packages, so that others can use them on their own data."
     btn_team: "Meet the team"
     btn_pubs: "Publications"
     btn_software: "Software"
@@ -38,11 +38,11 @@ en:
     join_title: "Open positions"
   research:
     intro: >-
-      Quantile regression runs through much of our work, but it is only one part of it. We also work on survival
-      analysis, high-dimensional data, and Bayesian models, and we apply them with collaborators in health, aging, and
-      the environment. Most projects start from a real question and end as an R package that others can use.
+      We develop statistical methods and use them on real data. Our work spans survival analysis, high-dimensional
+      statistics, quantile regression, Bayesian modeling, and machine learning, with applications in health, biology,
+      and the environment. Most projects start from a real question and end as a software package that others can use.
     learn_more: "Learn more"
-    software_text: "We release our methods as R packages, from competing-risks regression to closed-form estimators and selection models."
+    software_text: "We release our methods as software packages, from competing-risks regression to closed-form estimators and selection models."
     software_btn: "See software"
     related: "Related papers"
     all_areas: "All research areas"
@@ -86,10 +86,10 @@ ko:
     explore: "연구 둘러보기"
     about_title: "연구실 소개"
     about_lead: >-
-      QUIRK는 건국대학교 응용통계학과의 통계 및 데이터사이언스 연구실입니다. 주로 분위수 회귀분석을 활용한 방법론들을 다루지만, 이 외에도 다양한 문제들에 관심이 있습니다.
-      그중에도 특히 생존분석, 인과추론, 고차원 및 베이지안 모형, 머신러닝 등을 연구하고, 이를 보건, 노화, 환경 분야의 실제 문제에 적용합니다.
+      VIBE는 건국대학교 응용통계학과의 통계 및 데이터사이언스 연구실입니다. 평균 너머 데이터의 변동에 주목하며,
+      생존분석, 인과추론, 고차원 통계, 분위수 회귀, 베이지안 모형, 머신러닝 등을 연구하고, 이를 보건, 노화, 환경 분야의 실제 문제에 적용합니다.
     methods_title: "방법론"
-    methods_text: "분위수 회귀, 생존분석과 잔여수명, 고차원 모형과 베이지안 공간 모형을 연구하며, 이론적 근거도 함께 다룹니다."
+    methods_text: "생존분석, 고차원 통계, 분위수 회귀, 베이지안 모형, 머신러닝을 연구하며, 이론적 근거도 함께 다룹니다."
     apps_title: "응용"
     apps_text: "암 역학, 노화와 알츠하이머병, 영양과 대사체, 기후 극값 같은 실제 문제를 다양한 방법론들을 활용하여 풀고 있습니다."
     software_title: "소프트웨어"
@@ -118,8 +118,8 @@ ko:
     join_title: "구성원 모집"
   research:
     intro: >-
-      분위수 회귀가 저희 연구실의 주요 분야이긴 하지만, 그것이 전부는 아닙니다. 생존분석, 고차원 데이터, 베이지안 모형도 연구하며,
-      보건, 노화, 환경 분야의 공동연구자들과 함께 실제 문제에 적용합니다. 대부분의 연구는 실제 질문에서 시작해, 누구나 쓸 수 있는
+      저희는 통계 방법론을 개발하고 이를 실제 데이터에 적용합니다. 생존분석, 고차원 통계, 분위수 회귀, 베이지안 모형, 머신러닝 등을 연구하며,
+      이를 보건, 생명과학, 환경 분야의 문제에 활용합니다. 대부분의 연구는 실제 질문에서 시작해, 누구나 쓸 수 있는
       소프트웨어 패키지로 마무리됩니다.
     learn_more: "자세히 보기"
     software_text: "경쟁위험 회귀부터 닫힌 형태 추정량, 표본선택 모형까지, 개발한 방법을 소프트웨어 패키지로 공개합니다."

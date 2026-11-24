@@ -1,15 +1,13 @@
 ---
 title: High-Dimensional Statistics
-order: 3
+order: 2
 image: /assets/images/research/highdim.jpg
-description: "Finding the few signals that matter among thousands of features."
+description: "Finding signal among many variables."
 summary: >-
-  Genomic and metabolomic studies give us thousands of features for a few
-  hundred people. We build quantile-based screening and selection with false
-  discovery rate control, and partial linear models that mix sparse and
-  flexible parts.
+  Modern data often have far more variables than samples. We work on variable
+  screening, selection, and inference that stay reliable in this setting.
 ---
 
-When the number of variables is far larger than the sample size, classical tools stop working. We study how to find the few variables that matter, how to estimate their effects, and how to keep false discoveries in check.
+When the number of variables is much larger than the sample size, classical tools break down. We study how to find the variables that matter, estimate their effects, and keep false discoveries under control.
 
-We pay special attention to censored outcomes and quantile targets, since that is where omics signals often hide.
+These questions come up in genomics, metabolomics, and many other fields where data are wide.
